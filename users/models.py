@@ -13,6 +13,9 @@ class Post(TimeStampedModel):
     content = models.TextField()
     likes = models.ManyToManyField('MyUser', related_name='liked_posts', blank=True)
 
+    @property
+    def liked_posts(self):
+        return self.likes.count()
     def __str__(self):
         return self.title
 
