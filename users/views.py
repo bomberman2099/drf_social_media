@@ -10,12 +10,12 @@ from users.serializers import PostSerializer
 
 
 # Create your views here.
-# def post_list(request):
-#     posts = Post.objects.all()
-#     serializer = PostSerializer(posts, many=True)
-#     return JsonResponse(data=serializer.data, safe=False)
 
 
+
+
+
+# posts
 class PostList(APIView):
     serializer_class = PostSerializer
 
