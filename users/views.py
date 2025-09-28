@@ -1,15 +1,20 @@
 from django.http import JsonResponse
 from django.shortcuts import render
-from rest_framework import status
-from rest_framework.permissions import IsAuthenticated
+from rest_framework import status, generics
+from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
 from users.models import Post
-from users.serializers import PostSerializer
+from users.serializers import PostSerializer, MyUserSerializer
 
 
-# Create your views here.
+
+
+# auth
+class SignUpVIew(generics.CreateAPIView):
+    serializer_class = MyUserSerializer
+    permission_classes = [AllowAny]
 
 
 
